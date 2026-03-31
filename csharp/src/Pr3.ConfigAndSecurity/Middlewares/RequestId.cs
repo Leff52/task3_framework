@@ -7,7 +7,7 @@ public static class RequestId
 {
     private const string ItemKey = "request_id";
     private const string HeaderName = "X-Request-Id";
-    private static readonly Regex Allowed = new("^[a-zA-Z0-9\-]{1,64}$", RegexOptions.Compiled);
+    private static readonly Regex Allowed = new(@"^[a-zA-Z0-9\-]{1,64}$", RegexOptions.Compiled);
 
     public static string GetOrCreate(HttpContext context)
     {
